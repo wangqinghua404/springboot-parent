@@ -17,7 +17,7 @@ import java.util.Date;
  * @Description TODO
  * @Version 1.0
  */
-@Component
+//@Component
 public class SchedulerTask implements SchedulingConfigurer {
 
     private int count = 0;
