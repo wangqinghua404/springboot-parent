@@ -1,0 +1,23 @@
+server:
+  port: 9000
+spring:
+  profiles:
+    active: prod
+  datasource:
+    test:
+      driver-class-name: com.mysql.jdbc.Driver
+      jdbc-url: jdbc:mysql://127.0.0.1:3306/springbootdb?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=Asia/Shanghai
+      username: springbootdb
+      password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect  #设置数据库引擎为InnoDB，如果使用MySQLDialect 则对应的是MyISAM
+#    properties:
+#      hibernate:
+#        format_sql: true
+logging:
+  level:
+    org.hibernate.type.descriptor.sql.BasicBinder: trace

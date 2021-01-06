@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="springboot-dubbo-api:jar">
+    <output-path>$PROJECT_DIR$/../../测试</output-path>
+    <root id="archive" name="springboot-dubbo-api.jar">
+      <element id="module-output" name="springboot-dubbo-api" />
+    </root>
+  </artifact>
+</component>
