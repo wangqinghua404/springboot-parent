@@ -26,9 +26,4 @@ public class MyStartupRunner implements CommandLineRunner {
         System.out.println(">>>>>>>>>>>>>>>定时任务开始执行<<<<<<<<<<<<<");
     }
 
-//    @Scheduled(cron = "0 47 16 24 1 ?")
-//    public void schedule() throws SchedulerException {
-//        scheduleJobs.scheduleJobs();
-//        System.out.println(">>>>>>>>>>>>>>>定时任务开始执行<<<<<<<<<<<<<");
-//    }
 }
