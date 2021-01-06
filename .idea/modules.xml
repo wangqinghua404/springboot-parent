@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/springboot-jpa/springboot-jpa.iml" filepath="$PROJECT_DIR$/springboot-jpa/springboot-jpa.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-kafka/springboot-kafka.iml" filepath="$PROJECT_DIR$/springboot-kafka/springboot-kafka.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-parent.iml" filepath="$PROJECT_DIR$/springboot-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-quart/springboot-quart.iml" filepath="$PROJECT_DIR$/springboot-quart/springboot-quart.iml" />
     </modules>
   </component>
 </project>

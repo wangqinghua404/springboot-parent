@@ -10,6 +10,7 @@
         <module name="springboot-dubbo-server" />
         <module name="springboot-jpa" />
         <module name="springboot-kafka" />
+        <module name="springboot-quart" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -17,6 +18,7 @@
       <module name="springboot-dubbo-web" target="1.8" />
       <module name="springboot-jpa" target="1.8" />
       <module name="springboot-kafka" target="1.8" />
+      <module name="springboot-quart" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -25,6 +27,7 @@
       <module name="springboot-dubbo-web" options="-parameters" />
       <module name="springboot-jpa" options="-parameters" />
       <module name="springboot-kafka" options="-parameters" />
+      <module name="springboot-quart" options="-parameters" />
     </option>
   </component>
 </project>

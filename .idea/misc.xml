@@ -7,6 +7,7 @@
         <option value="$PROJECT_DIR$/springboot-dubbo-server/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-dubbo-web/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-kafka/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-quart/pom.xml" />
       </list>
     </option>
   </component>
