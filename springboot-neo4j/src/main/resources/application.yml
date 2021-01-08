@@ -1,0 +1,13 @@
+server:
+  port: 9004
+spring:
+  neo4j:
+    uri: bolt://localhost:7687
+    authentication:
+      username: neo4j
+      password: wqh
+logging:
+  level:
+    com.wqh.neo4j: debug
+  file:
+    path: /log
