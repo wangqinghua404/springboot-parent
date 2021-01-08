@@ -6,11 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="springboot-dubbo-web" />
-        <module name="springboot-dubbo-server" />
-        <module name="springboot-jpa" />
-        <module name="springboot-kafka" />
         <module name="springboot-quart" />
+        <module name="springboot-dubbo-web" />
+        <module name="springboot-neo4j" />
+        <module name="springboot-kafka" />
+        <module name="springboot-jpa" />
+        <module name="springboot-dubbo-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -18,6 +19,7 @@
       <module name="springboot-dubbo-web" target="1.8" />
       <module name="springboot-jpa" target="1.8" />
       <module name="springboot-kafka" target="1.8" />
+      <module name="springboot-neo4j" target="1.8" />
       <module name="springboot-quart" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -27,6 +29,7 @@
       <module name="springboot-dubbo-web" options="-parameters" />
       <module name="springboot-jpa" options="-parameters" />
       <module name="springboot-kafka" options="-parameters" />
+      <module name="springboot-neo4j" options="-parameters" />
       <module name="springboot-quart" options="-parameters" />
     </option>
   </component>

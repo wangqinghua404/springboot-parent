@@ -1,5 +1,6 @@
 package com.wqh.jpa.service.impl;
 
+import com.google.gson.Gson;
 import com.wqh.jpa.dao.TestDao;
 import com.wqh.jpa.entity.User;
 import com.wqh.jpa.service.TestService;
@@ -15,7 +16,9 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import javax.persistence.criteria.Predicate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @ClassName TestServiceImpl
@@ -26,6 +29,9 @@ import java.util.List;
  */
 @Service
 public class TestServiceImpl implements TestService {
+
+    private static final Gson gson = new Gson();
+
     @Resource
     private TestDao testDao;
 
@@ -47,6 +53,8 @@ public class TestServiceImpl implements TestService {
                 return criteriaBuilder.and(predicates.toArray(new Predicate[0]));
             };
             Page<User> pages = testDao.findAll(specification, pageable);
+            ResponseEntity responseEntity = new ResponseEntity(page,HttpStatus.OK);
+            String map = gson.toJson(responseEntity);
             return new ResponseEntity<>(CommonUtil.getResponse(pages), HttpStatus.OK);
         } catch (Exception e) {
             e.printStackTrace();

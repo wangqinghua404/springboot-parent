@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/springboot-dubbo-web/springboot-dubbo-web.iml" filepath="$PROJECT_DIR$/springboot-dubbo-web/springboot-dubbo-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-jpa/springboot-jpa.iml" filepath="$PROJECT_DIR$/springboot-jpa/springboot-jpa.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-kafka/springboot-kafka.iml" filepath="$PROJECT_DIR$/springboot-kafka/springboot-kafka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-neo4j/springboot-neo4j.iml" filepath="$PROJECT_DIR$/springboot-neo4j/springboot-neo4j.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-parent.iml" filepath="$PROJECT_DIR$/springboot-parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-quart/springboot-quart.iml" filepath="$PROJECT_DIR$/springboot-quart/springboot-quart.iml" />
     </modules>
