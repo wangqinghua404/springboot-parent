@@ -1,15 +1,13 @@
 package com.wqh.neo4j.controller;
 
-import com.wqh.neo4j.entity.ParentNode;
-import com.wqh.neo4j.entity.RelationNode;
-import com.wqh.neo4j.entity.SonNode;
-import com.wqh.neo4j.repository.ParentReporitory;
+import com.wqh.neo4j.entity.*;
+import com.wqh.neo4j.repository.*;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import java.util.Iterator;
-import java.util.Set;
+
+import javax.annotation.Resource;
+import java.util.*;
 
 /**
  * @ClassName Neo4JController
@@ -22,33 +20,61 @@ import java.util.Set;
 @Slf4j
 public class Neo4JController {
 
-    @Autowired
-    ParentReporitory parentReporitory;
+    @Resource
+    private NodeReporistory nodeReporistory;
+    @Resource
+    private RelationShipReporistory relationShipReporistory;
 
-    @GetMapping(value = "/test1")
-    public void test1() {
-        SonNode sonNode1 = new SonNode("孩子柳依依");
-        SonNode sonNode2 = new SonNode("孩子柳风");
-
-        ParentNode parentNode = new ParentNode("青年:柳大叔");
-
-        parentNode.addRelation(sonNode1, "女儿");
-        parentNode.addRelation(sonNode2, "儿子");
-
-        parentReporitory.save(parentNode);
+    @GetMapping(value = "/save")
+    public void test3() {
+        Node parentNode1 = Node.builder().name("1").build();
+        Node childNode1 = Node.builder().name("1.1").build();
+        Node childNode2 = Node.builder().name("1.2").build();
+        Node childNode3 = Node.builder().name("1.1.1").build();
+        List nodes = new ArrayList(Arrays.asList(parentNode1, childNode1, childNode2, childNode3));
+        RelationShip relationShip1 = RelationShip.builder().parent(parentNode1).name("子节点").child(childNode1).build();
+        RelationShip relationShip2 = RelationShip.builder().parent(parentNode1).name("子节点").child(childNode2).build();
+        RelationShip relationShip3 = RelationShip.builder().parent(childNode1).name("子节点").child(childNode3).build();
+        List relationShips = new ArrayList(Arrays.asList(relationShip1, relationShip2, relationShip3));
+        nodeReporistory.saveAll(nodes);
+        relationShipReporistory.saveAll(relationShips);
     }
 
-    @GetMapping(value = "/test2")
-    public void test2() {
-        Iterable<ParentNode> parentNodes = parentReporitory.findAll();
-        Iterator<ParentNode> iterator = parentNodes.iterator();
-        while (iterator.hasNext()) {
-            ParentNode parentNode = iterator.next();
-            Set<RelationNode> relationNodeSet = parentNode.getSets();
-            for (RelationNode relationNode : relationNodeSet) {
-                log.info("id:" + parentNode.getId() + "    name:" + parentNode.getName() + "     关系：" + relationNode.getName() + "子节点：" + relationNode.getSonNode().getName());
-            }
+    @GetMapping("selectAll")
+    public Map selectAll() {
+        Map<String, Object> resultMap = new HashMap<>();
+//        Iterable<Node> nodesIterator = nodeReporistory.findAll();
+//
+//        List<Node> nodeList = Lists.newArrayList(nodesIterator);
+//        resultMap.put("nodes", nodeList);
+//
+//        Iterator<Node> nodeIterator = nodesIterator.iterator();
+//        while (nodeIterator.hasNext()) {
+//            Node node = nodeIterator.next();
+//        }
+//        Iterable<RelationShip> relationShips = relationShipReporistory.findAll();
+//
+//        List<RelationShip> relationShipsList = Lists.newArrayList(relationShips);
+//        resultMap.put("relationShips", relationShipsList);
+//
+//        Iterator<RelationShip> relationShipIterator = relationShips.iterator();
+//        while (relationShipIterator.hasNext()) {
+//            RelationShip relationShip = relationShipIterator.next();
+//        }
 
-        }
+        List<Node> nodeList = nodeReporistory.findAll();
+        resultMap.put("nodes", nodeList);
+        List<RelationShip> relationShips = relationShipReporistory.findAll();
+        resultMap.put("relationShips", relationShips);
+        return resultMap;
     }
+
+    @GetMapping("deleteAll")
+    public void deleteAll() {
+        nodeReporistory.deleteAll();
+        relationShipReporistory.deleteAll();
+    }
+
+
 }
+
